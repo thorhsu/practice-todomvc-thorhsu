@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { element } from '@angular/core/src/render3';
 
 export interface Todo {
   id: number;
@@ -17,6 +18,7 @@ export class AppComponent {
   newTodo = '';
   todos: Todo[] = [];
   id = 0;
+  allChecked = false;
 
   addTodo() {
     this.todos.push(
@@ -33,6 +35,14 @@ export class AppComponent {
   }
 
   deleteTodo(todo: Todo) {
-    this.todos = this.todos.filter(element => element.id !== todo.id);
+    // tslint:disable-next-line:no-shadowed-variable
+    this.todos = this.todos.filter((element: Todo) => element.id !== todo.id);
   }
+  toggleAllCompleted() {
+    // tslint:disable-next-line:no-shadowed-variable
+    this.allChecked = !this.allChecked;
+    this.todos = this.todos.map((element: Todo) => ({...element, isCompleted: this.allChecked}));
+    
+  }
+
 }
