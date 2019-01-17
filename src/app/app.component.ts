@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Todomvc';
+  newPlaceHolder = 'What needs to be done?';
 }
