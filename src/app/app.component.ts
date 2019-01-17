@@ -8,9 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Todomvc';
   newPlaceHolder = 'What needs to be done?';
+  newTodo = '';
 
-  addTodo(template){
-    console.log(template.value);
-
+  addTodo() {
+    console.log(this.newTodo);
+    this.newTodo = '';
   }
 }
