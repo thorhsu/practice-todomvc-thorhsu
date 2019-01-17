@@ -29,9 +29,10 @@ export class AppComponent {
     this.newTodo = '';
   }
   toggleCompleted(todo: Todo) {
-    console.log(todo);
     todo.isCompleted = !todo.isCompleted;
-    console.log(this.todos);
+  }
 
+  deleteTodo(todo: Todo) {
+    this.todos = this.todos.filter(element => element.id !== todo.id);
   }
 }
