@@ -9,9 +9,11 @@ export class AppComponent {
   title = 'Todomvc';
   newPlaceHolder = 'What needs to be done?';
   newTodo = '';
+  todos = [];
 
   addTodo() {
-    console.log(this.newTodo);
+    this.todos.push(this.newTodo);
+    console.log(this.todos);
     this.newTodo = '';
   }
 }
