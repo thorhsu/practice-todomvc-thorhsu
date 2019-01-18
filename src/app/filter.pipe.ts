@@ -3,8 +3,7 @@ import { Todo } from './app.component';
 
 
 @Pipe({
-  name: 'filter',
-  pure: false
+  name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
 

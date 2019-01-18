@@ -41,6 +41,7 @@ export class AppComponent {
   }
   toggleCompleted(todo: Todo) {
     todo.isCompleted = !todo.isCompleted;
+    this.todos = [...this.todos];
   }
   deleteTodo(todo: Todo) {
     // tslint:disable-next-line:no-shadowed-variable
