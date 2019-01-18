@@ -28,17 +28,15 @@
 				</ul>
 			</section>
 			<!-- This footer should hidden by default and shown when there are todos -->
-      <!-- <app-filters [todos]="todos" 
-                   [uncompletedCounter]="uncompletedCounter" 
-                   [filterCondition]="filterCondition" 
-                   (filterConditionChange)="filterCondition=$event"
-                   (clearCompleted)="clearCompleted()">
-           </app-filters> -->
       <footer class="footer" *ngIf="todos.length > 0"> 
         <!-- This should be `0 items left` by default -->
         <span class="todo-count"><strong>{{ uncompletedCounter }}</strong> item left</span>
         <!-- Remove this if you don't implement routing -->
     
+        <!-- 此寫法同下<app-filters 
+                   [filterCondition]="filterCondition" 
+                   (filterConditionChange)="filterCondition=$event">
+           </app-filters> -->
         <app-filters [(filterCondition)]="filterCondition"></app-filters> 
           <!-- Hidden if no completed items are left ↓ -->
         <button class="clear-completed" (click)="clearCompleted()">Clear completed</button>
