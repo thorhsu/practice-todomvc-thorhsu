@@ -11,7 +11,7 @@ export class FiltersComponent implements OnInit {
   @Input() todos: Todo[];
   @Input() uncompletedCounter: number;
   @Output() filterConditionChange = new EventEmitter();
-  @Input('filterCondition') get filterCondition() {
+  @Input() get filterCondition() {
     return this._filterCondition;
   }
   @Output() clearCompleted = new EventEmitter();

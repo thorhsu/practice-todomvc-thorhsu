@@ -31,7 +31,9 @@
       <!-- <app-filters [todos]="todos" 
                    [uncompletedCounter]="uncompletedCounter" 
                    [filterCondition]="filterCondition" 
-                   (filterConditionChange)="filterCondition=$event"></app-filters> -->
+                   (filterConditionChange)="filterCondition=$event"
+                   (clearCompleted)="clearCompleted()">
+           </app-filters> -->
       <app-filters  [todos]="todos" 
                     [uncompletedCounter]="uncompletedCounter" 
                     [(filterCondition)]="filterCondition" 
