@@ -25,7 +25,7 @@ export class FiltersComponent implements OnInit {
   ngOnInit() {
   }
 
-  clearCompletedEmitter() {
+  clearCompletedEmit() {
     this.clearCompleted.emit();
   }
 
