@@ -14,6 +14,7 @@ export class FiltersComponent implements OnInit {
   @Input('filterCondition') get filterCondition() {
     return this._filterCondition;
   }
+  @Output() clearCompleted = new EventEmitter();
   set filterCondition(filterCondition: 'all' | 'completed' | 'active') {
     this._filterCondition = filterCondition;
     this.filterConditionChange.emit(this._filterCondition);
@@ -23,4 +24,10 @@ export class FiltersComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  clearCompletedEmitter() {
+    this.clearCompleted.emit();
+  }
+
+
 }

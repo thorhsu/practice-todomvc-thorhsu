@@ -35,6 +35,7 @@
       <app-filters  [todos]="todos" 
                     [uncompletedCounter]="uncompletedCounter" 
                     [(filterCondition)]="filterCondition" 
+                    (clearCompleted)="clearCompleted()"
                     ></app-filters>      
     </section>
     <app-footer></app-footer>
