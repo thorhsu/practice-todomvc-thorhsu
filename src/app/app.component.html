@@ -34,11 +34,15 @@
                    (filterConditionChange)="filterCondition=$event"
                    (clearCompleted)="clearCompleted()">
            </app-filters> -->
-      <app-filters  [todos]="todos" 
-                    [uncompletedCounter]="uncompletedCounter" 
-                    [(filterCondition)]="filterCondition" 
-                    (clearCompleted)="clearCompleted()"
-                    ></app-filters>      
+      <footer class="footer" *ngIf="todos.length > 0"> 
+        <!-- This should be `0 items left` by default -->
+        <span class="todo-count"><strong>{{ uncompletedCounter }}</strong> item left</span>
+        <!-- Remove this if you don't implement routing -->
+    
+        <app-filters [(filterCondition)]="filterCondition"></app-filters> 
+          <!-- Hidden if no completed items are left ↓ -->
+        <button class="clear-completed" (click)="clearCompleted()">Clear completed</button>
+      </footer>     
     </section>
     <app-footer></app-footer>
 
