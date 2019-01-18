@@ -42,7 +42,5 @@ export class AppComponent {
     // tslint:disable-next-line:no-shadowed-variable
     this.allChecked = !this.allChecked;
     this.todos = this.todos.map((element: Todo) => ({...element, isCompleted: this.allChecked}));
-    
   }
-
 }
