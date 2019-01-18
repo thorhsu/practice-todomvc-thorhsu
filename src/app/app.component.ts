@@ -5,6 +5,7 @@ export interface Todo {
   id: number;
   todoNm: string;
   isCompleted: boolean;
+  isEditing: boolean;
 }
 
 @Component({
@@ -25,7 +26,8 @@ export class AppComponent {
       {
         id: ++this.id,
         todoNm: this.newTodo,
-        isCompleted: false
+        isCompleted: false,
+        isEditing: false
       }
     );
     this.newTodo = '';
@@ -33,7 +35,6 @@ export class AppComponent {
   toggleCompleted(todo: Todo) {
     todo.isCompleted = !todo.isCompleted;
   }
-
   deleteTodo(todo: Todo) {
     // tslint:disable-next-line:no-shadowed-variable
     this.todos = this.todos.filter((element: Todo) => element.id !== todo.id);
@@ -43,4 +44,8 @@ export class AppComponent {
     this.allChecked = !this.allChecked;
     this.todos = this.todos.map((element: Todo) => ({...element, isCompleted: this.allChecked}));
   }
+  setTodoEditing(todo: Todo) {
+    todo.isEditing = true;
+  }
+
 }
