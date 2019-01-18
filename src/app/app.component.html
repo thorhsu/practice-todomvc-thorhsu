@@ -28,10 +28,14 @@
 				</ul>
 			</section>
 			<!-- This footer should hidden by default and shown when there are todos -->
-      <app-filters [todos]="todos" 
+      <!-- <app-filters [todos]="todos" 
                    [uncompletedCounter]="uncompletedCounter" 
                    [filterCondition]="filterCondition" 
-                   (filterConditionChange)="filterCondition=$event"></app-filters>
+                   (filterConditionChange)="filterCondition=$event"></app-filters> -->
+      <app-filters  [todos]="todos" 
+                    [uncompletedCounter]="uncompletedCounter" 
+                    [(filterCondition)]="filterCondition" 
+                    ></app-filters>      
     </section>
     <app-footer></app-footer>
 

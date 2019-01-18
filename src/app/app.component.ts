@@ -55,5 +55,4 @@ export class AppComponent {
   clearCompleted() {
     this.todos = this.todos.filter((element: Todo) => !element.isCompleted);
   }
-
 }
