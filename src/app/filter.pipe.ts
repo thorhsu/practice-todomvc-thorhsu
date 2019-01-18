@@ -8,7 +8,7 @@ import { Todo } from './app.component';
 export class FilterPipe implements PipeTransform {
 
   transform(todos: Todo[], condition?: 'all' | 'active' | 'completed'): Todo[] {
-    switch(condition) {
+    switch (condition) {
       case 'all':
          break;
       case 'active':

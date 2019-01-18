@@ -35,7 +35,6 @@ export class AppComponent {
         isEditing: false
       }
     );
-    console.log(this.todos);
   }
   toggleCompleted(todo: Todo) {
     todo.isCompleted = !todo.isCompleted;

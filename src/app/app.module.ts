@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { FilterPipe } from './filter.pipe';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterPipe,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    FiltersComponent
 
   ],
   imports: [
