@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { element } from '@angular/core/src/render3';
+import { TNodeProviderIndexes } from '@angular/core/src/render3/interfaces/node';
 
 export interface Todo {
   id: number;
@@ -20,6 +21,9 @@ export class AppComponent {
   todos: Todo[] = [];
   id = 0;
   allChecked = false;
+  get uncompletedCounter() {
+    return this.todos.filter((todo: Todo) => !todo.isCompleted).length;
+  }
 
   addTodo() {
     this.todos.push(
@@ -46,6 +50,9 @@ export class AppComponent {
   }
   setTodoEditing(todo: Todo) {
     todo.isEditing = true;
+  }
+  clearCompleted() {
+    this.todos = this.todos.filter((element: Todo) => !element.isCompleted);
   }
 
 }
