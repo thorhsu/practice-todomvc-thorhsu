@@ -16,7 +16,6 @@ export interface Todo {
 })
 export class AppComponent {
   title = 'Todomvc';
-  newTodo = '';
   todos: Todo[] = [];
   id = 0;
   allChecked = false;
@@ -27,16 +26,16 @@ export class AppComponent {
     return this.todos.filter((todo: Todo) => !todo.isCompleted).length;
   }
 
-  addTodo() {
+  addTodo(newTodo: string) {
     this.todos.push(
       {
         id: ++this.id,
-        todoNm: this.newTodo,
+        todoNm: newTodo,
         isCompleted: false,
         isEditing: false
       }
     );
-    this.newTodo = '';
+    console.log(this.todos);
   }
   toggleCompleted(todo: Todo) {
     todo.isCompleted = !todo.isCompleted;

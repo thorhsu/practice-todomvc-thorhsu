@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() title: string;
+  // tslint:disable-next-line:no-output-rename
+  @Output('addTodo') addTodoEmitter = new EventEmitter();
+
+
   newPlaceHolder = 'What needs to be done?';
   newTodo = '';
 
@@ -15,4 +19,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  addTodo() {
+    this.addTodoEmitter.emit(this.newTodo);
+    this.newTodo = '';
+  }
 }

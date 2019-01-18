@@ -1,5 +1,5 @@
 		<section class="todoapp">
-      <app-header [title]='title'></app-header>
+      <app-header [title]='title' (addTodo)="addTodo($event)"></app-header>
 			<!-- This section should be hidden by default and shown when there are todos -->
 			<section class="main" [hidden]="todos.length === 0" >
 				<input class="toggle-all" type="checkbox" [checked]="allChecked" (click)="toggleAllCompleted()">
