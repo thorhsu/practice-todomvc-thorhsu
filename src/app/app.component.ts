@@ -21,6 +21,9 @@ export class AppComponent {
   todos: Todo[] = [];
   id = 0;
   allChecked = false;
+  filterCondition = 'all';
+
+
   get uncompletedCounter() {
     return this.todos.filter((todo: Todo) => !todo.isCompleted).length;
   }
