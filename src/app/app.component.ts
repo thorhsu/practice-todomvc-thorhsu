@@ -16,7 +16,6 @@ export interface Todo {
 })
 export class AppComponent {
   title = 'Todomvc';
-  newPlaceHolder = 'What needs to be done?';
   newTodo = '';
   todos: Todo[] = [];
   id = 0;
