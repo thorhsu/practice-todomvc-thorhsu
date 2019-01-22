@@ -1,11 +1,11 @@
     <ul class="filters">
       <li>
-        <a [class.selected]="filterCondition==='all'" href="#/" (click)="filterCondition='all'">All</a>
+        <a [class.selected]="todoService.filterCondition==='all'" href="#/" (click)="todoService.filterCondition='all'">All</a>
       </li>
       <li>
-        <a href="#/active" [class.selected]="filterCondition==='active'" (click)="filterCondition='active'">Active</a>
+        <a href="#/active" [class.selected]="todoService.filterCondition==='active'" (click)="todoService.filterCondition='active'">Active</a>
       </li>
       <li>
-        <a href="#/completed" [class.selected]="filterCondition==='completed'" (click)="filterCondition='completed'">Completed</a>
+        <a href="#/completed" [class.selected]="todoService.filterCondition==='completed'" (click)="todoService.filterCondition='completed'">Completed</a>
       </li>
     </ul>

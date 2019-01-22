@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { TodosServiceService } from '../todos-service.service';
 
 @Component({
   selector: 'app-header',
@@ -6,21 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() title: string;
-  // tslint:disable-next-line:no-output-rename
-  @Output('addTodo') addTodoEmitter = new EventEmitter();
-
-
-  newPlaceHolder = 'What needs to be done?';
-  newTodo = '';
-
-  constructor() { }
-
+  constructor(public todoService: TodosServiceService) { }
   ngOnInit() {
-  }
-
-  addTodo() {
-    this.addTodoEmitter.emit(this.newTodo);
-    this.newTodo = '';
   }
 }

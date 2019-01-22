@@ -14,7 +14,6 @@ import { FiltersComponent } from './filters/filters.component';
     FooterComponent,
     HeaderComponent,
     FiltersComponent
-
   ],
   imports: [
     BrowserModule,
