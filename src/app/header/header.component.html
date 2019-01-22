@@ -1,5 +1,0 @@
-<header class="header">
-    <h1>{{todoService.title}}</h1>
-    <!-- <input class="new-todo" [placeholder]="newPlaceHolder" #addtodo autofocus (keyup.enter)="addTodo(addtodo)"> -->
-    <input class="new-todo" [placeholder]="todoService.newPlaceHolder" [(ngModel)]="todoService.newTodo" autofocus (keyup.enter)="todoService.addTodo()">
-  </header>
